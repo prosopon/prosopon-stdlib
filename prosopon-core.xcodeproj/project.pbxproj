@@ -1,0 +1,287 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		890024901511A2380012E749 /* pro_number.c in Sources */ = {isa = PBXBuildFile; fileRef = 890024811511A21B0012E749 /* pro_number.c */; };
+		890024911511A2390012E749 /* pro_string.c in Sources */ = {isa = PBXBuildFile; fileRef = 890024831511A21B0012E749 /* pro_string.c */; };
+		890024931511A2450012E749 /* prosopon_libcore.h in Headers */ = {isa = PBXBuildFile; fileRef = 890024851511A21B0012E749 /* prosopon_libcore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		890024FD1511A3970012E749 /* libprosopon.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 890024AF1511A2AF0012E749 /* libprosopon.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		890024AE1511A2AF0012E749 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 890024A41511A2AE0012E749 /* prosopon.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 89DD609914FC755D0072ADE5;
+			remoteInfo = prosopon;
+		};
+		890024FB1511A3780012E749 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 890024A41511A2AE0012E749 /* prosopon.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 890024E71511A3430012E749;
+			remoteInfo = prosopon;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		890024811511A21B0012E749 /* pro_number.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pro_number.c; sourceTree = "<group>"; };
+		890024821511A21B0012E749 /* pro_number.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pro_number.h; sourceTree = "<group>"; };
+		890024831511A21B0012E749 /* pro_string.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pro_string.c; sourceTree = "<group>"; };
+		890024841511A21B0012E749 /* pro_string.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pro_string.h; sourceTree = "<group>"; };
+		890024851511A21B0012E749 /* prosopon_libcore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prosopon_libcore.h; sourceTree = "<group>"; };
+		8900248C1511A2300012E749 /* libprosopon-core.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = "libprosopon-core.dylib"; sourceTree = BUILT_PRODUCTS_DIR; };
+		890024A41511A2AE0012E749 /* prosopon.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = prosopon.xcodeproj; path = ../prosopon/prosopon.xcodeproj; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		890024891511A2300012E749 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				890024FD1511A3970012E749 /* libprosopon.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		890024631511A1A60012E749 = {
+			isa = PBXGroup;
+			children = (
+				890024801511A21B0012E749 /* src */,
+				890024A41511A2AE0012E749 /* prosopon.xcodeproj */,
+				8900246F1511A1A60012E749 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8900246F1511A1A60012E749 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8900248C1511A2300012E749 /* libprosopon-core.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		890024801511A21B0012E749 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				890024821511A21B0012E749 /* pro_number.h */,
+				890024811511A21B0012E749 /* pro_number.c */,
+				890024841511A21B0012E749 /* pro_string.h */,
+				890024831511A21B0012E749 /* pro_string.c */,
+				890024851511A21B0012E749 /* prosopon_libcore.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		890024A51511A2AE0012E749 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				890024AF1511A2AF0012E749 /* libprosopon.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8900248A1511A2300012E749 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				890024931511A2450012E749 /* prosopon_libcore.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8900248B1511A2300012E749 /* prosopon-core */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8900248D1511A2300012E749 /* Build configuration list for PBXNativeTarget "prosopon-core" */;
+			buildPhases = (
+				890024881511A2300012E749 /* Sources */,
+				890024891511A2300012E749 /* Frameworks */,
+				8900248A1511A2300012E749 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				890024FC1511A3780012E749 /* PBXTargetDependency */,
+			);
+			name = "prosopon-core";
+			productName = "prosopon-core";
+			productReference = 8900248C1511A2300012E749 /* libprosopon-core.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		890024651511A1A60012E749 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 890024681511A1A60012E749 /* Build configuration list for PBXProject "prosopon-core" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 890024631511A1A60012E749;
+			productRefGroup = 8900246F1511A1A60012E749 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 890024A51511A2AE0012E749 /* Products */;
+					ProjectRef = 890024A41511A2AE0012E749 /* prosopon.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				8900248B1511A2300012E749 /* prosopon-core */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		890024AF1511A2AF0012E749 /* libprosopon.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libprosopon.dylib;
+			remoteRef = 890024AE1511A2AF0012E749 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXSourcesBuildPhase section */
+		890024881511A2300012E749 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				890024901511A2380012E749 /* pro_number.c in Sources */,
+				890024911511A2390012E749 /* pro_string.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		890024FC1511A3780012E749 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = prosopon;
+			targetProxy = 890024FB1511A3780012E749 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		890024761511A1A60012E749 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(PROSOPON_BUILD_ROOT)/**";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				PROSOPON_BUILD_ROOT = "$(PROSOPON_ROOT_DIR)/build";
+				PROSOPON_ROOT_DIR = ..;
+				SDKROOT = macosx;
+				SYMROOT = "$(PROSOPON_ROOT_DIR)/build";
+			};
+			name = Debug;
+		};
+		890024771511A1A60012E749 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(PROSOPON_BUILD_ROOT)/**";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PROSOPON_BUILD_ROOT = "$(PROSOPON_ROOT_DIR)/build";
+				PROSOPON_ROOT_DIR = ..;
+				SDKROOT = macosx;
+				SYMROOT = "$(PROSOPON_ROOT_DIR)/build";
+			};
+			name = Release;
+		};
+		8900248E1511A2300012E749 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				HEADER_SEARCH_PATHS = "";
+				PRODUCT_NAME = "prosopon-core";
+				PROSOPON_BUILD_ROOT = "";
+				PROSOPON_ROOT_DIR = ..;
+				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";
+			};
+			name = Debug;
+		};
+		8900248F1511A2300012E749 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				HEADER_SEARCH_PATHS = "";
+				PRODUCT_NAME = "prosopon-core";
+				PROSOPON_BUILD_ROOT = "";
+				PROSOPON_ROOT_DIR = ..;
+				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		890024681511A1A60012E749 /* Build configuration list for PBXProject "prosopon-core" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				890024761511A1A60012E749 /* Debug */,
+				890024771511A1A60012E749 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8900248D1511A2300012E749 /* Build configuration list for PBXNativeTarget "prosopon-core" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8900248E1511A2300012E749 /* Debug */,
+				8900248F1511A2300012E749 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 890024651511A1A60012E749 /* Project object */;
+}

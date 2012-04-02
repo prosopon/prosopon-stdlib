@@ -9,7 +9,7 @@
 /**
  * Creates a new string in the current environment
  */
-PRO_LIBCORE pro_lookup* (pro_string_create) (pro_state*, const char* data);
+PRO_LIBCORE pro_ref (pro_string_create) (pro_state*, const char* data);
 
 
 #pragma mark Number
@@ -17,7 +17,7 @@ PRO_LIBCORE pro_lookup* (pro_string_create) (pro_state*, const char* data);
 /**
  * Creates a new number in the current environment
  */
-PRO_LIBCORE pro_lookup* (pro_number_create) (pro_state*, double data);
+PRO_LIBCORE pro_ref (pro_number_create) (pro_state*, double data);
 
 
 #endif

@@ -9,13 +9,13 @@
 #pragma mark Private
 
 static void behavior_impl(pro_state* s,
-    const pro_lookup* t, const pro_lookup* msg, void* data)
+    const pro_ref t, const pro_ref msg, void* data)
 {
 }
 
 static int match(pro_state* s,
-    const pro_lookup* t, const void* tData,
-    const pro_lookup* o, const void* oData)
+    const pro_ref t, const void* tData,
+    const pro_ref o, const void* oData)
 {
     const char* string1 = tData;
     const char* string2 = oData;
@@ -24,7 +24,7 @@ static int match(pro_state* s,
 }
 
 static const char* to_string(pro_state* s,
-    const pro_lookup* t, const void* tData)
+    const pro_ref t, const void* tData)
 {
     return tData;
 }
@@ -44,9 +44,9 @@ const pro_actor_type_info pro_string_type_info = {
 #pragma mark - 
 #pragma mark Public
 
-PRO_LIBCORE pro_lookup* pro_string_create(pro_state* s, const char* data)
+PRO_LIBCORE pro_ref pro_string_create(pro_state* s, const char* data)
 {
-    pro_lookup* actor = pro_actor_create(s, pro_string_actor_type);
+    pro_ref actor = pro_actor_create(s, pro_string_actor_type);
     pro_behavior behavior = {
         .data = malloc(sizeof(*data) * (strlen(data) + 1)),
         .impl = behavior_impl

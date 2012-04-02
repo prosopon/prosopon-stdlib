@@ -1,18 +1,52 @@
 #include "pro_number.h"
 
 #include "prosopon_libcore.h"
+#include "pro_string.h"
 
 #include <stdlib.h>
 #include <assert.h>
 #include <string.h>
+#include <stdio.h>
+
 
 #pragma mark Private
-
 
 static void behavior_impl(pro_state* s,
     const pro_lookup* t, const pro_lookup* msg, void* data)
 {
+    unsigned int msg_length = pro_message_length(s, msg);
+    if (msg_length < 1)
+        return;
     
+    pro_lookup* first = pro_message_get(s, msg, 0);
+    
+    if (strcmp(pro_string_actor_type, pro_get_actor_type(s, first)) == 0 )
+    {
+        if (pro_match(s, first, pro_string_create(s, "-")))
+        {
+            pro_lookup* val = pro_message_get(s, msg, 1);
+            pro_lookup* cust = pro_message_get(s, msg, 2);
+            
+            const double* d1 = data;
+            const double* d2 = pro_request_actor_data(s, val);
+            
+            pro_lookup* response = pro_message_create(s);
+            pro_message_append(s, response, pro_number_create(s, *d1 - *d2));
+            pro_send(s, cust, response);
+        }
+        else
+        {
+            pro_lookup* val = pro_message_get(s, msg, 1);
+            pro_lookup* cust = pro_message_get(s, msg, 2);
+            
+            const double* d1 = data;
+            const double* d2 = pro_request_actor_data(s, val);
+            
+            pro_lookup* response = pro_message_create(s);
+            pro_message_append(s, response, pro_number_create(s, *d1 * *d2));
+            pro_send(s, cust, response);
+        }
+    }
 }
 
 static int match(pro_state* s,
@@ -30,6 +64,16 @@ static int match(pro_state* s,
     return *d1 == *d2;
 }
 
+static const char* to_string(pro_state* s,
+    const pro_lookup* t, const void* tData)
+{
+    const double* d = tData;
+    char* buffer = malloc(sizeof(*buffer) * (32 + 1));
+    snprintf(buffer, 32, "%g", *d);
+    return buffer;
+}
+
+
 #pragma mark -
 #pragma mark Internal
 
@@ -37,7 +81,8 @@ pro_actor_type pro_number_actor_type = "number";
 
 
 const pro_actor_type_info pro_number_type_info = {
-    .match = match
+    .match = match,
+    .to_string = to_string
 };
 
 

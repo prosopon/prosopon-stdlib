@@ -10,6 +10,9 @@
 		890024901511A2380012E749 /* pro_number.c in Sources */ = {isa = PBXBuildFile; fileRef = 890024811511A21B0012E749 /* pro_number.c */; };
 		890024911511A2390012E749 /* pro_string.c in Sources */ = {isa = PBXBuildFile; fileRef = 890024831511A21B0012E749 /* pro_string.c */; };
 		890024FD1511A3970012E749 /* libprosopon.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 890024AF1511A2AF0012E749 /* libprosopon.dylib */; };
+		898A28201528DFA600959A40 /* pro_stdio.h in Headers */ = {isa = PBXBuildFile; fileRef = 898A281F1528DFA600959A40 /* pro_stdio.h */; };
+		898A28241528DFC000959A40 /* pro_stdio.c in Sources */ = {isa = PBXBuildFile; fileRef = 898A28231528DFC000959A40 /* pro_stdio.c */; };
+		89ACBEBC151EC3ED003EA8EE /* prosopon-libcore.c in Sources */ = {isa = PBXBuildFile; fileRef = 89ACBEBB151EC3EC003EA8EE /* prosopon-libcore.c */; };
 		89CE9C9C151E861B00CE5511 /* prosopon_libcore.h in Headers */ = {isa = PBXBuildFile; fileRef = 89CE9C9B151E861B00CE5511 /* prosopon_libcore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -44,6 +47,9 @@
 		890024841511A21B0012E749 /* pro_string.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pro_string.h; sourceTree = "<group>"; };
 		8900248C1511A2300012E749 /* libprosopon-core.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = "libprosopon-core.dylib"; sourceTree = BUILT_PRODUCTS_DIR; };
 		890024A41511A2AE0012E749 /* prosopon.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = prosopon.xcodeproj; path = ../prosopon/prosopon.xcodeproj; sourceTree = "<group>"; };
+		898A281F1528DFA600959A40 /* pro_stdio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pro_stdio.h; sourceTree = "<group>"; };
+		898A28231528DFC000959A40 /* pro_stdio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pro_stdio.c; sourceTree = "<group>"; };
+		89ACBEBB151EC3EC003EA8EE /* prosopon-libcore.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "prosopon-libcore.c"; sourceTree = "<group>"; };
 		89CE9C9B151E861B00CE5511 /* prosopon_libcore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prosopon_libcore.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,10 +86,13 @@
 		890024801511A21B0012E749 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				89ACBEBB151EC3EC003EA8EE /* prosopon-libcore.c */,
 				890024821511A21B0012E749 /* pro_number.h */,
 				890024811511A21B0012E749 /* pro_number.c */,
 				890024841511A21B0012E749 /* pro_string.h */,
 				890024831511A21B0012E749 /* pro_string.c */,
+				898A281F1528DFA600959A40 /* pro_stdio.h */,
+				898A28231528DFC000959A40 /* pro_stdio.c */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -113,6 +122,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89CE9C9C151E861B00CE5511 /* prosopon_libcore.h in Headers */,
+				898A28201528DFA600959A40 /* pro_stdio.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +202,8 @@
 			files = (
 				890024901511A2380012E749 /* pro_number.c in Sources */,
 				890024911511A2390012E749 /* pro_string.c in Sources */,
+				89ACBEBC151EC3ED003EA8EE /* prosopon-libcore.c in Sources */,
+				898A28241528DFC000959A40 /* pro_stdio.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,7 +238,10 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "$(PROSOPON_BUILD_ROOT)/**";
+				HEADER_SEARCH_PATHS = (
+					"include/**",
+					"$(PROSOPON_BUILD_ROOT)/**",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
 				PROSOPON_BUILD_ROOT = "$(PROSOPON_ROOT_DIR)/build";
@@ -250,7 +265,10 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "$(PROSOPON_BUILD_ROOT)/**";
+				HEADER_SEARCH_PATHS = (
+					"include/**",
+					"$(PROSOPON_BUILD_ROOT)/**",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PROSOPON_BUILD_ROOT = "$(PROSOPON_ROOT_DIR)/build";
 				PROSOPON_ROOT_DIR = ..;

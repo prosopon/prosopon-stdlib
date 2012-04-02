@@ -5,18 +5,23 @@ LINK = gcc
 DOC = doxygen
 
 CFLAGS = -std=c99 -I./include -I../prosopon/include -Isrc
+LINK_FLAGS = -lprosopon -shared -lc
 DOC_FLAGS = 
 
 SRC_DIR = src
 TEST_DIR = test
 OUT_DIR = build
 
-OBJS = pro_number.o pro_string.o
+OBJS = pro_number.o pro_string.o prosopon-libcore.o
 OUT_OBJS = $(addprefix $(OUT_DIR)/,$(OBJS))
 
 
-all : $(OUT_OBJS) 
-	$(LINK) -lprosopon  -shared $^ -lc -Wl,-install_name,libprosopon-core.so.1 -o libprosopon-core.so.1
+all : libprosopon-core.so.1
+	
+
+libprosopon-core.so.1: $(OUT_OBJS) 
+	$(LINK) $(LINK_FLAGS) $^ -Wl,-install_name,libprosopon-core.so.1 -o $@
+
 
 $(OUT_DIR)/%.o : $(SRC_DIR)/%.c
 	$(CC) $(CFLAGS) -fPIC -c $^ -o $@

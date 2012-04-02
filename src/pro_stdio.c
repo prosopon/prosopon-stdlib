@@ -11,7 +11,7 @@ static void stdio_behavior_impl(pro_state* s,
     for (unsigned int i = 0; i < pro_message_length(s, msg); ++i)
     {
         pro_lookup* arg = pro_message_get(s, msg, i);
-        fprintf(stdout, "%s\n", pro_to_string(s, arg));
+        fprintf(stdout, "out %s\n", pro_to_string(s, arg));
     }
     fflush(stdout);
 }

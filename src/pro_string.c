@@ -46,7 +46,8 @@ const pro_actor_type_info pro_string_type_info = {
 
 PRO_LIBCORE pro_ref pro_string_create(pro_state_ref s, const char* data)
 {
-    pro_ref actor = pro_actor_create(s, pro_string_actor_type);
+    pro_ref actor;
+    pro_actor_create(s, pro_string_actor_type, &actor);
     pro_behavior behavior = {
         .data = malloc(sizeof(*data) * (strlen(data) + 1)),
         .impl = behavior_impl

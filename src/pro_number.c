@@ -22,9 +22,13 @@ static void behavior_impl(pro_state_ref s,
     pro_ref first;
     pro_message_get(s, msg, 0, &first);
     
-    if (strcmp(pro_string_actor_type, pro_get_actor_type(s, first)) == 0 )
+    pro_actor_type actor_type;
+    pro_get_actor_type(s, first, &actor_type);
+    if (strcmp(pro_string_actor_type, actor_type) == 0 )
     {
-        if (pro_match(s, first, pro_string_create(s, "-")))
+        int match;
+        pro_match(s, first, pro_string_create(s, "-"), &match);
+        if (match)
         {
             pro_ref val, cust;
             pro_message_get(s, msg, 1, &val);
@@ -99,7 +103,8 @@ const pro_actor_type_info pro_number_type_info = {
 
 PRO_LIBCORE pro_ref pro_number_create(pro_state_ref s, double data)
 {
-    pro_ref actor = pro_actor_create(s, pro_number_actor_type);
+    pro_ref actor;
+    pro_actor_create(s, pro_number_actor_type, &actor);
     pro_behavior behavior = {
         .data = malloc(sizeof(data)),
         .impl = behavior_impl

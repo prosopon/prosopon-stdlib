@@ -20,13 +20,15 @@ static void stdio_behavior_impl(pro_state_ref s,
     fflush(stdout);
 }
 
+
 #pragma mark -
 #pragma mark Internal
 
 void pro_initialize_stdio(pro_state_ref s)
 {
     // stdout actor
-    pro_ref stdout_actor = pro_actor_create(s, PRO_DEFAULT_ACTOR_TYPE);
+    pro_ref stdout_actor;
+    pro_actor_create(s, PRO_DEFAULT_ACTOR_TYPE, &stdout_actor);
     pro_behavior stdout_behavior = {
         .impl = stdio_behavior_impl,
         .data = 0

@@ -12,10 +12,12 @@
 		890024FD1511A3970012E749 /* libprosopon.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 890024AF1511A2AF0012E749 /* libprosopon.dylib */; };
 		898A28201528DFA600959A40 /* pro_stdio.h in Headers */ = {isa = PBXBuildFile; fileRef = 898A281F1528DFA600959A40 /* pro_stdio.h */; };
 		898A28241528DFC000959A40 /* pro_stdio.c in Sources */ = {isa = PBXBuildFile; fileRef = 898A28231528DFC000959A40 /* pro_stdio.c */; };
-		89ACBEBC151EC3ED003EA8EE /* prosopon-libcore.c in Sources */ = {isa = PBXBuildFile; fileRef = 89ACBEBB151EC3EC003EA8EE /* prosopon-libcore.c */; };
+		89ACBEBC151EC3ED003EA8EE /* prosopon_libcore.c in Sources */ = {isa = PBXBuildFile; fileRef = 89ACBEBB151EC3EC003EA8EE /* prosopon_libcore.c */; };
 		89CE9C9C151E861B00CE5511 /* prosopon_libcore.h in Headers */ = {isa = PBXBuildFile; fileRef = 89CE9C9B151E861B00CE5511 /* prosopon_libcore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		89F95437152E934A0060B211 /* pro_boolean.h in Headers */ = {isa = PBXBuildFile; fileRef = 89F95436152E934A0060B211 /* pro_boolean.h */; };
 		89F9543B152E93550060B211 /* pro_boolean.c in Sources */ = {isa = PBXBuildFile; fileRef = 89F9543A152E93550060B211 /* pro_boolean.c */; };
+		89FD7A4D1531F2D700B8F629 /* prosopon_macros.h in Headers */ = {isa = PBXBuildFile; fileRef = 89FD7A4C1531F2D700B8F629 /* prosopon_macros.h */; };
+		89FD7A511531F52C00B8F629 /* prosopon_macros.c in Sources */ = {isa = PBXBuildFile; fileRef = 89FD7A501531F52C00B8F629 /* prosopon_macros.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,10 +53,12 @@
 		890024A41511A2AE0012E749 /* prosopon.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = prosopon.xcodeproj; path = ../prosopon/prosopon.xcodeproj; sourceTree = "<group>"; };
 		898A281F1528DFA600959A40 /* pro_stdio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pro_stdio.h; sourceTree = "<group>"; };
 		898A28231528DFC000959A40 /* pro_stdio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pro_stdio.c; sourceTree = "<group>"; };
-		89ACBEBB151EC3EC003EA8EE /* prosopon-libcore.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "prosopon-libcore.c"; sourceTree = "<group>"; };
+		89ACBEBB151EC3EC003EA8EE /* prosopon_libcore.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = prosopon_libcore.c; sourceTree = "<group>"; };
 		89CE9C9B151E861B00CE5511 /* prosopon_libcore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prosopon_libcore.h; sourceTree = "<group>"; };
 		89F95436152E934A0060B211 /* pro_boolean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pro_boolean.h; sourceTree = "<group>"; };
 		89F9543A152E93550060B211 /* pro_boolean.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pro_boolean.c; sourceTree = "<group>"; };
+		89FD7A4C1531F2D700B8F629 /* prosopon_macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prosopon_macros.h; sourceTree = "<group>"; };
+		89FD7A501531F52C00B8F629 /* prosopon_macros.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = prosopon_macros.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +94,8 @@
 		890024801511A21B0012E749 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				89ACBEBB151EC3EC003EA8EE /* prosopon-libcore.c */,
+				89ACBEBB151EC3EC003EA8EE /* prosopon_libcore.c */,
+				89FD7A501531F52C00B8F629 /* prosopon_macros.c */,
 				890024821511A21B0012E749 /* pro_number.h */,
 				890024811511A21B0012E749 /* pro_number.c */,
 				890024841511A21B0012E749 /* pro_string.h */,
@@ -116,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				89CE9C9B151E861B00CE5511 /* prosopon_libcore.h */,
+				89FD7A4C1531F2D700B8F629 /* prosopon_macros.h */,
 			);
 			path = include;
 			sourceTree = "<group>";
@@ -130,6 +136,7 @@
 				89CE9C9C151E861B00CE5511 /* prosopon_libcore.h in Headers */,
 				898A28201528DFA600959A40 /* pro_stdio.h in Headers */,
 				89F95437152E934A0060B211 /* pro_boolean.h in Headers */,
+				89FD7A4D1531F2D700B8F629 /* prosopon_macros.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,9 +216,10 @@
 			files = (
 				890024901511A2380012E749 /* pro_number.c in Sources */,
 				890024911511A2390012E749 /* pro_string.c in Sources */,
-				89ACBEBC151EC3ED003EA8EE /* prosopon-libcore.c in Sources */,
+				89ACBEBC151EC3ED003EA8EE /* prosopon_libcore.c in Sources */,
 				898A28241528DFC000959A40 /* pro_stdio.c in Sources */,
 				89F9543B152E93550060B211 /* pro_boolean.c in Sources */,
+				89FD7A511531F52C00B8F629 /* prosopon_macros.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

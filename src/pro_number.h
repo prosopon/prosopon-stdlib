@@ -2,6 +2,7 @@
 #define prosopon_pro_number_h
 
 #include "prosopon.h"
+#include "prosopon_actor_type.h"
 
 
 extern pro_actor_type pro_number_actor_type;

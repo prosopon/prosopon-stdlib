@@ -6,7 +6,7 @@
 #pragma mark Private
 
 static void stdio_behavior_impl(pro_state_ref s,
-    pro_ref t, pro_ref msg, void* data)
+    pro_ref t, pro_ref msg, pro_ref data)
 {
     unsigned int msg_length;
     pro_message_length(s, msg, &msg_length);
@@ -28,12 +28,8 @@ void pro_initialize_stdio(pro_state_ref s)
 {
     // stdout actor
     pro_ref stdout_actor;
-    pro_actor_create(s, PRO_DEFAULT_ACTOR_TYPE, &stdout_actor);
-    pro_behavior stdout_behavior = {
-        .impl = stdio_behavior_impl,
-        .data = 0
-    };
-    pro_become(s, stdout_actor, stdout_behavior);
+    pro_actor_create(s, PRO_DEFAULT_ACTOR_TYPE, stdio_behavior_impl,
+        PRO_EMPTY_REF, &stdout_actor);
     pro_bind(s, stdout_actor, "stdout");
 }
 

@@ -9,24 +9,35 @@
 #pragma mark Private
 
 static void behavior_impl(pro_state_ref s,
-    pro_ref t, pro_ref msg, void* data)
+    pro_ref t, pro_ref msg, pro_ref data)
 {
 }
 
 static int match(pro_state_ref s,
-    pro_ref t, const void* tData,
-    pro_ref o, const void* oData)
+    pro_ref t, pro_ref tData,
+    pro_ref o)
 {
-    const char* string1 = tData;
-    const char* string2 = oData;
+    const void* s1;
+    const void* s2;
+    
+    pro_ref oData;
+    pro_actor_request_ud(s, o, &oData);
+    
+    pro_ud_read(s, tData, &s1);
+    pro_ud_read(s, oData, &s2);
+
+    const char* string1 = s1;
+    const char* string2 = s2;
     
     return strcmp(string1, string2) == 0 ? 1 : 0;
 }
 
 static const char* to_string(pro_state_ref s,
-    pro_ref t, const void* tData)
+    pro_ref t, pro_ref tData)
 {
-    return tData;
+    const void* d;
+    pro_ud_read(s, tData, &d);
+    return d;
 }
 
 
@@ -46,13 +57,15 @@ const pro_actor_type_info pro_string_type_info = {
 
 PRO_LIBCORE pro_ref pro_string_create(pro_state_ref s, const char* data)
 {
+    pro_ref ud;
+    pro_ud_create(s, sizeof(*data) * (strlen(data) + 1),
+        PRO_DEFAULT_UD_DECONSTRUCTOR, &ud);
+    
+    void* ud_ptr;
+    pro_ud_write(s, ud, &ud_ptr);
+    strcpy(ud_ptr, data);
+    
     pro_ref actor;
-    pro_actor_create(s, pro_string_actor_type, &actor);
-    pro_behavior behavior = {
-        .data = malloc(sizeof(*data) * (strlen(data) + 1)),
-        .impl = behavior_impl
-    };
-    strcpy(behavior.data, data);
-    pro_become(s, actor, behavior);
+    pro_actor_create(s, pro_string_actor_type, behavior_impl, ud, &actor);
     return actor;
 }

@@ -23,7 +23,7 @@ PRO_LIBCORE pro_ref (pro_number_create) (pro_state_ref, double data);
 #pragma mark Boolean
 
 /**
- * @return A referance to a boolean actor.
+ * @return A reference to a boolean actor.
  */
 PRO_LIBCORE pro_ref (pro_boolean_create) (pro_state_ref, int bool);
 

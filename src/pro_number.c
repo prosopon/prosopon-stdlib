@@ -1,6 +1,6 @@
 #include "pro_number.h"
 
-#include "prosopon_libcore.h"
+#include "prosopon_stdlib.h"
 #include "pro_string.h"
 #include "prosopon_macros.h"
 

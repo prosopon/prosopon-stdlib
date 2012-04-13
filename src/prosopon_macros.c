@@ -1,6 +1,6 @@
 #include "prosopon_macros.h"
 
-#include "prosopon_libcore.h"
+#include "prosopon_stdlib.h"
 
 #include <string.h>
 

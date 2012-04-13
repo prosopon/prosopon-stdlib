@@ -1,6 +1,6 @@
 #include "pro_string.h"
 
-#include "prosopon_libcore.h"
+#include "prosopon_stdlib.h"
 
 #include <stdlib.h>
 #include <string.h>

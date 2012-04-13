@@ -12,15 +12,15 @@ SRC_DIR = src
 TEST_DIR = test
 OUT_DIR = build
 
-OBJS = pro_number.o pro_string.o prosopon-libcore.o
+OBJS = pro_number.o pro_string.o prosopon_stdlib.o pro_stdio.o pro_boolean.o prosopon_macros.o
 OUT_OBJS = $(addprefix $(OUT_DIR)/,$(OBJS))
 
 
-all : libprosopon-core.so.1
+all : libprosopon-stdlib.so.1
 	
 
-libprosopon-core.so.1: $(OUT_OBJS) 
-	$(LINK) $(LINK_FLAGS) $^ -Wl,-install_name,libprosopon-core.so.1 -o $@
+libprosopon-stdlib.so.1: $(OUT_OBJS) 
+	$(LINK) $(LINK_FLAGS) $^ -Wl,-install_name,libprosopon-stdlib.so.1 -o $@
 
 
 $(OUT_DIR)/%.o : $(SRC_DIR)/%.c
@@ -28,7 +28,7 @@ $(OUT_DIR)/%.o : $(SRC_DIR)/%.c
 
 
 install:
-	cp libprosopon-core.so.1 /usr/local/lib/
+	cp libprosopon-stdlib.so.1 /usr/local/lib/
 
 
 .PHONY : doc
@@ -39,4 +39,4 @@ doc :
 .PHONY : clean
 clean :
 	rm -f $(OUT_DIR)/*
-	if [ -f libprosopon-core.so.* ]; then rm libprosopon-core.so.*; fi
+	if [ -f libprosopon-stdlib.so.* ]; then rm libprosopon-stdlib.so.*; fi

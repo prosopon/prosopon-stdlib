@@ -13,7 +13,7 @@ static void behavior_impl(pro_state_ref s,
 {
 }
 
-static int match(pro_state_ref s,
+static pro_matching match(pro_state_ref s,
     pro_ref t, pro_ref tData,
     pro_ref o)
 {
@@ -29,7 +29,7 @@ static int match(pro_state_ref s,
     const char* string1 = s1;
     const char* string2 = s2;
     
-    return strcmp(string1, string2) == 0 ? 1 : 0;
+    return strcmp(string1, string2) == 0 ? PRO_MATCH_SUCCEED : PRO_MATCH_FAIL;
 }
 
 static const char* to_string(pro_state_ref s,

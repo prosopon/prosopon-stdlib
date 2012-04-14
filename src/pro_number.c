@@ -71,7 +71,7 @@ static void behavior_impl(pro_state_ref s,
     }
 }
 
-static int match(pro_state_ref s,
+static pro_matching match(pro_state_ref s,
     pro_ref t, pro_ref tData, pro_ref o)
 {
     pro_type t_primitive_type;
@@ -89,7 +89,7 @@ static int match(pro_state_ref s,
     
     const double d1 = pro_ud_get_number_value(s, tData);
     const double d2 = pro_ud_get_number_value(s, oData);
-    return d1 == d2;
+    return d1 == d2 ? PRO_MATCH_SUCCEED : PRO_MATCH_FAIL;
 }
 
 static const char* to_string(pro_state_ref s,

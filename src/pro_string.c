@@ -32,11 +32,11 @@ static pro_matching match(pro_state_ref s,
     return strcmp(string1, string2) == 0 ? PRO_MATCH_SUCCEED : PRO_MATCH_FAIL;
 }
 
-static const char* to_string(pro_state_ref s,
+static char* to_string(pro_state_ref s,
     pro_ref t, pro_ref tData)
 {
-    const void* d;
-    pro_ud_read(s, tData, &d);
+    void* d;
+    pro_ud_write(s, tData, &d);
     return d;
 }
 
@@ -67,5 +67,7 @@ PRO_LIBCORE pro_ref pro_string_create(pro_state_ref s, const char* data)
     
     pro_ref actor;
     pro_actor_create(s, pro_string_actor_type, behavior_impl, ud, &actor);
+    pro_release(s, ud);
+
     return actor;
 }

@@ -21,6 +21,9 @@ void pro_initialize_boolean(pro_state_ref s)
 
     pro_bind(s, true_actor, "true");
     pro_bind(s, false_actor, "false");
+    
+    pro_release(s, true_actor);
+    pro_release(s, false_actor);
 }
 
 

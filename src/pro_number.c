@@ -32,8 +32,7 @@ static void math(pro_state_ref s, pro_ref t, pro_ref data, pro_ref msg, BINARY_O
     const double d1 = pro_ud_get_number_value(s, data);
     const double d2 = pro_ud_get_number_value(s, val_data);
 
-    pro_ref result, response;
-    pro_message_create(s, &response);
+    pro_ref result;
     switch (op)
     {
     case ADD_BINARY_OP: result = pro_number_create(s, d1 + d2); break;
@@ -41,8 +40,18 @@ static void math(pro_state_ref s, pro_ref t, pro_ref data, pro_ref msg, BINARY_O
     case MUL_BINARY_OP: result = pro_number_create(s, d1 * d2); break;
     case DIV_BINARY_OP: result = pro_number_create(s, d1 / d2); break;
     }
-    pro_message_append(s, response, result);
-    pro_send(s, cust, response);
+    
+    pro_ref response, valResponse = PRO_EMPTY_REF;
+    pro_message_create(s, &response);
+    pro_message_append(s, response, result, &valResponse);
+    pro_release(s, response);
+    pro_release(s, result);
+    
+    pro_release(s, val);
+    
+    pro_send(s, cust, valResponse);
+    pro_release(s, cust);
+    pro_release(s, valResponse);
 }
 
 
@@ -66,6 +75,8 @@ static void behavior_impl(pro_state_ref s,
             math(s, t, data, msg, MUL_BINARY_OP);
         else if (pro_match_string(s, first, "/"))
             math(s, t, data, msg, DIV_BINARY_OP);
+            
+        pro_release(s, first);
     }   break;
     default:break;
     }
@@ -92,7 +103,7 @@ static pro_matching match(pro_state_ref s,
     return d1 == d2 ? PRO_MATCH_SUCCEED : PRO_MATCH_FAIL;
 }
 
-static const char* to_string(pro_state_ref s,
+static char* to_string(pro_state_ref s,
     pro_ref t, pro_ref tData)
 {
     const void* d;
@@ -125,13 +136,13 @@ PRO_LIBCORE pro_ref pro_number_create(pro_state_ref s, double data)
     pro_ref ud;
     pro_ud_create(s, sizeof(data), PRO_DEFAULT_UD_DECONSTRUCTOR, &ud);
     
-    void* ud_ptr;
-    pro_ud_write(s, ud, &ud_ptr);
-    double* number_val = ud_ptr;
+    double* number_val;
+    pro_ud_write(s, ud, (void**)&number_val);
     *number_val = data;
 
     pro_ref actor;
     pro_actor_create(s, pro_number_actor_type, behavior_impl, ud, &actor);
+    pro_release(s, ud);
     
     return actor;
 }

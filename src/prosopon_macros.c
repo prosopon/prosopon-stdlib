@@ -16,7 +16,9 @@ PRO_LIBCORE double pro_ud_get_number_value(pro_state_ref s, pro_ref ud)
 PRO_LIBCORE pro_matching pro_match_string(pro_state_ref s, pro_ref t, const char* str)
 {
     pro_matching match;
-    pro_match(s, t, pro_string_create(s, str), &match);
+    pro_ref match_str = pro_string_create(s, str);
+    pro_match(s, t, match_str, &match);
+    pro_release(s, match_str);
     return match;
 }
 

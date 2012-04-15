@@ -32,4 +32,6 @@ PRO_INTERNAL void pro_initialize_matching(pro_state_ref s)
         0, PRO_EMPTY_REF, &wildcard_actor);
         
     pro_bind(s, wildcard_actor, "?*");
+    
+    pro_release(s, wildcard_actor);
 }

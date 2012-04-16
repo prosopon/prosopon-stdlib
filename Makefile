@@ -12,7 +12,7 @@ SRC_DIR = src
 TEST_DIR = test
 OUT_DIR = build
 
-OBJS = pro_number.o pro_string.o prosopon_stdlib.o pro_stdio.o pro_boolean.o prosopon_macros.o
+OBJS = pro_number.o pro_string.o prosopon_stdlib.o pro_stdio.o pro_boolean.o prosopon_macros.o pro_matching.o
 OUT_OBJS = $(addprefix $(OUT_DIR)/,$(OBJS))
 
 

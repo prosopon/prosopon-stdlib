@@ -99,18 +99,19 @@ static pro_matching match(pro_state_ref s,
     return d1 == d2 ? PRO_MATCH_SUCCEED : PRO_MATCH_FAIL;
 }
 
-static char* to_string(pro_state_ref s,
+static pro_ref to_string(pro_state_ref s,
     pro_ref t, pro_ref tData)
 {
-    pro_alloc* alloc;
-    pro_get_alloc(s, &alloc);
-
     const double* n;
     pro_ud_read(s, tData, (const void**)&n);
     
-    char* buffer = alloc(0, sizeof(*buffer) * (32 + 1));
+    char* buffer;
+    pro_ref ud;
+    pro_ud_create(s, sizeof(*buffer) * (32 + 1), PRO_DEFAULT_UD_DECONSTRUCTOR, &ud);
+    
+    pro_ud_write(s, ud, (void**)&buffer);
     snprintf(buffer, 32, "%g", *n);
-    return buffer;
+    return ud;
 }
 
 

@@ -18,7 +18,13 @@ static void stdio_behavior_impl(pro_state_ref s,
     {
         pro_ref arg;
         pro_list_get(s, msg, i, &arg);
-        char* string = pro_to_string(s, arg);
+        
+        pro_ref ud;
+        pro_to_string(s, arg, &ud);
+        
+        char* string;
+        pro_ud_read(s, ud, (const void**)&string);
+
         fprintf(stdout, "%s\n", string);
         alloc(string, 0);
         pro_release(s, arg);

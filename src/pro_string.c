@@ -24,12 +24,11 @@ static pro_matching match(pro_state_ref s,
     return strcmp(s1, s2) == 0 ? PRO_MATCH_SUCCEED : PRO_MATCH_FAIL;
 }
 
-static char* to_string(pro_state_ref s,
+static pro_ref to_string(pro_state_ref s,
     pro_ref t, pro_ref tData)
 {
-    void* d;
-    pro_ud_write(s, tData, &d);
-    return d;
+    pro_retain(s, tData);
+    return tData;
 }
 
 

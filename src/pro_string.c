@@ -15,21 +15,13 @@ static void behavior_impl(pro_state_ref s,
 
 static pro_matching match(pro_state_ref s,
     pro_ref t, pro_ref tData,
-    pro_ref o)
+    pro_ref o, pro_ref oData)
 {
-    const void* s1;
-    const void* s2;
+    const char *s1, *s2;
+    pro_ud_read(s, tData, (const void**)&s1);
+    pro_ud_read(s, oData, (const void**)&s2);
     
-    pro_ref oData;
-    pro_actor_request_ud(s, o, &oData);
-    
-    pro_ud_read(s, tData, &s1);
-    pro_ud_read(s, oData, &s2);
-
-    const char* string1 = s1;
-    const char* string2 = s2;
-    
-    return strcmp(string1, string2) == 0 ? PRO_MATCH_SUCCEED : PRO_MATCH_FAIL;
+    return strcmp(s1, s2) == 0 ? PRO_MATCH_SUCCEED : PRO_MATCH_FAIL;
 }
 
 static char* to_string(pro_state_ref s,

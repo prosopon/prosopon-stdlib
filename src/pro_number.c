@@ -4,7 +4,6 @@
 #include "pro_string.h"
 #include "prosopon_macros.h"
 
-#include <stdlib.h>
 #include <assert.h>
 #include <string.h>
 #include <stdio.h>
@@ -23,8 +22,8 @@ typedef enum
 static void math(pro_state_ref s, pro_ref t, pro_ref data, pro_ref msg, BINARY_OP op)
 {
     pro_ref val, cust;
-    pro_message_get(s, msg, 1, &val);
-    pro_message_get(s, msg, 2, &cust);
+    pro_list_get(s, msg, 1, &val);
+    pro_list_get(s, msg, 2, &cust);
 
     pro_ref val_data;
     pro_actor_request_ud(s, val, &val_data);
@@ -42,8 +41,8 @@ static void math(pro_state_ref s, pro_ref t, pro_ref data, pro_ref msg, BINARY_O
     }
     
     pro_ref response, valResponse = PRO_EMPTY_REF;
-    pro_message_create(s, &response);
-    pro_message_append(s, response, result, &valResponse);
+    pro_list_create(s, &response);
+    pro_list_append(s, response, result, &valResponse);
     pro_release(s, response);
     pro_release(s, result);
     
@@ -59,13 +58,13 @@ static void behavior_impl(pro_state_ref s,
     pro_ref t, pro_ref msg, pro_ref data)
 {
     unsigned int msg_length;
-    pro_message_length(s, msg, &msg_length);
+    pro_list_length(s, msg, &msg_length);
     switch (msg_length)
     {
     case 3:
     {
         pro_ref first;
-        pro_message_get(s, msg, 0, &first);
+        pro_list_get(s, msg, 0, &first);
         
         if (pro_match_string(s, first, "+"))
             math(s, t, data, msg, ADD_BINARY_OP);
@@ -83,7 +82,7 @@ static void behavior_impl(pro_state_ref s,
 }
 
 static pro_matching match(pro_state_ref s,
-    pro_ref t, pro_ref tData, pro_ref o)
+    pro_ref t, pro_ref tData, pro_ref o, pro_ref oData)
 {
     pro_type t_primitive_type;
     pro_get_type(s, t, &t_primitive_type);
@@ -95,9 +94,6 @@ static pro_matching match(pro_state_ref s,
     if (o_primitive_type != PRO_ACTOR_TYPE)
         return 0;
     
-    pro_ref oData;
-    pro_actor_request_ud(s, o, &oData);
-    
     const double d1 = pro_ud_get_number_value(s, tData);
     const double d2 = pro_ud_get_number_value(s, oData);
     return d1 == d2 ? PRO_MATCH_SUCCEED : PRO_MATCH_FAIL;
@@ -106,11 +102,13 @@ static pro_matching match(pro_state_ref s,
 static char* to_string(pro_state_ref s,
     pro_ref t, pro_ref tData)
 {
-    const void* d;
-    pro_ud_read(s, tData, &d);
-    const double* n = d;
+    pro_alloc* alloc;
+    pro_get_alloc(s, &alloc);
+
+    const double* n;
+    pro_ud_read(s, tData, (const void**)&n);
     
-    char* buffer = malloc(sizeof(*buffer) * (32 + 1));
+    char* buffer = alloc(0, sizeof(*buffer) * (32 + 1));
     snprintf(buffer, 32, "%g", *n);
     return buffer;
 }

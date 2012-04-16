@@ -3,7 +3,8 @@
 
 #pragma mark Private
 
-static pro_matching match(pro_state_ref s, pro_ref t, pro_ref tData, pro_ref o)
+static pro_matching match(pro_state_ref s,
+    pro_ref t, pro_ref tData, pro_ref o, pro_ref oData)
 {
     return PRO_MATCH_CONTINUE;
 }

@@ -9,7 +9,7 @@ static void stdio_behavior_impl(pro_state_ref s,
     pro_ref t, pro_ref msg, pro_ref data)
 {
     unsigned int msg_length;
-    pro_message_length(s, msg, &msg_length);
+    pro_list_length(s, msg, &msg_length);
     
     pro_alloc* alloc;
     pro_get_alloc(s, &alloc);
@@ -17,7 +17,7 @@ static void stdio_behavior_impl(pro_state_ref s,
     for (unsigned int i = 0; i < msg_length; ++i)
     {
         pro_ref arg;
-        pro_message_get(s, msg, i, &arg);
+        pro_list_get(s, msg, i, &arg);
         char* string = pro_to_string(s, arg);
         fprintf(stdout, "%s\n", string);
         alloc(string, 0);

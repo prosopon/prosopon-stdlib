@@ -49,12 +49,15 @@ const pro_actor_type_info pro_string_type_info = {
 PRO_LIBCORE pro_ref pro_string_create(pro_state_ref s, const char* data)
 {
     pro_ref ud;
-    pro_ud_create(s, sizeof(*data) * (strlen(data) + 1),
-        PRO_DEFAULT_UD_DECONSTRUCTOR, &ud);
+    size_t size = data ? sizeof(*data) * (strlen(data) + 1) : 0;
+    pro_ud_create(s, size, PRO_DEFAULT_UD_DECONSTRUCTOR, &ud);
     
-    void* ud_ptr;
-    pro_ud_write(s, ud, &ud_ptr);
-    strcpy(ud_ptr, data);
+    if (data)
+    {
+        void* ud_ptr;
+        pro_ud_write(s, ud, &ud_ptr);
+        strcpy(ud_ptr, data);
+    }
     
     pro_ref actor;
     pro_actor_create(s, pro_string_actor_type, behavior_impl, ud, &actor);

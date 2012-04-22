@@ -5,6 +5,36 @@
 #include <string.h>
 
 
+
+PRO_LIBCORE pro_ref pro_number_ud_create(pro_state_ref s, double val)
+{
+    pro_ref ud;
+    pro_ud_create(s, sizeof(val), PRO_DEFAULT_UD_DECONSTRUCTOR, &ud);
+    
+    double* number_val;
+    pro_ud_write(s, ud, (void**)&number_val);
+    *number_val = val;
+    
+    return ud;
+}
+
+
+PRO_LIBCORE pro_ref pro_string_ud_create(pro_state_ref s, const char* val)
+{
+    pro_ref ud;
+    size_t size = val ? sizeof(*val) * (strlen(val) + 1) : 0;
+    pro_ud_create(s, size, PRO_DEFAULT_UD_DECONSTRUCTOR, &ud);
+    
+    if (val)
+    {
+        void* ud_ptr;
+        pro_ud_write(s, ud, &ud_ptr);
+        strcpy(ud_ptr, val);
+    }
+    return ud;
+}
+
+
 PRO_LIBCORE double pro_ud_get_number_value(pro_state_ref s, pro_ref ud)
 {
     const double *val;

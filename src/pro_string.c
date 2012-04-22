@@ -1,6 +1,7 @@
 #include "pro_string.h"
 
 #include "prosopon_stdlib.h"
+#include "prosopon_macros.h"
 
 #include <stdlib.h>
 #include <string.h>
@@ -48,18 +49,8 @@ const pro_actor_type_info pro_string_type_info = {
 
 PRO_LIBCORE pro_ref pro_string_create(pro_state_ref s, const char* data)
 {
-    pro_ref ud;
-    size_t size = data ? sizeof(*data) * (strlen(data) + 1) : 0;
-    pro_ud_create(s, size, PRO_DEFAULT_UD_DECONSTRUCTOR, &ud);
-    
-    if (data)
-    {
-        void* ud_ptr;
-        pro_ud_write(s, ud, &ud_ptr);
-        strcpy(ud_ptr, data);
-    }
-    
     pro_ref actor;
+    pro_ref ud = pro_string_ud_create(s, data);    
     pro_actor_create(s, pro_string_actor_type, behavior_impl, ud, &actor);
     pro_release(s, ud);
 

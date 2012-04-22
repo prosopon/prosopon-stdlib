@@ -132,14 +132,9 @@ const pro_actor_type_info pro_number_type_info = {
 
 PRO_LIBCORE pro_ref pro_number_create(pro_state_ref s, double data)
 {
-    pro_ref ud;
-    pro_ud_create(s, sizeof(data), PRO_DEFAULT_UD_DECONSTRUCTOR, &ud);
-    
-    double* number_val;
-    pro_ud_write(s, ud, (void**)&number_val);
-    *number_val = data;
-
     pro_ref actor;
+
+    pro_ref ud = pro_number_ud_create(s, data);
     pro_actor_create(s, pro_number_actor_type, behavior_impl, ud, &actor);
     pro_release(s, ud);
     

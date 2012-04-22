@@ -22,13 +22,17 @@ static void stdio_behavior_impl(pro_state_ref s,
         pro_ref ud;
         pro_to_string(s, arg, &ud);
         
-        char* string;
-        pro_ud_read(s, ud, (const void**)&string);
+        if (PRO_EMPTY_REF != ud)
+        {
+            char* string;
+            pro_ud_read(s, ud, (const void**)&string);
 
-        fprintf(stdout, "%s\n", string);
-        pro_release(s, ud);
+            fprintf(stdout, "%s\n", string);
+            pro_release(s, ud);
+        }
         pro_release(s, arg);
     }
+    
     fflush(stdout);
 }
 

@@ -11,9 +11,6 @@ static void stdio_behavior_impl(pro_state_ref s,
     unsigned int msg_length;
     pro_list_length(s, msg, &msg_length);
     
-    pro_alloc* alloc;
-    pro_get_alloc(s, &alloc);
-    
     for (unsigned int i = 0; i < msg_length; ++i)
     {
         pro_ref arg;

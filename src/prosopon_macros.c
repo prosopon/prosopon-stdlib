@@ -53,9 +53,16 @@ PRO_LIBCORE pro_matching pro_match_string(pro_state_ref s, pro_ref t, const char
 }
 
 
-PRO_LIBCORE int pro_match_type(pro_state_ref s, pro_ref t, pro_actor_type type)
+PRO_LIBCORE int pro_match_actor_type(pro_state_ref s, pro_ref t, pro_actor_type type)
 {
     pro_actor_type actor_type;
     pro_get_actor_type(s, t, &actor_type);
     return strcmp(type, actor_type) == 0 ? 1 : 0;    
+}
+
+PRO_LIBCORE int pro_match_type(pro_state_ref s, pro_ref t, pro_type type)
+{
+    pro_type t_type;
+    pro_get_type(s, t, &t_type);
+    return type == t_type;    
 }

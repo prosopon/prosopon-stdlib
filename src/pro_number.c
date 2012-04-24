@@ -40,17 +40,16 @@ static void math(pro_state_ref s, pro_ref t, pro_ref data, pro_ref msg, BINARY_O
     case DIV_BINARY_OP: result = pro_number_create(s, d1 / d2); break;
     }
     
-    pro_ref response, valResponse = PRO_EMPTY_REF;
+    pro_ref response;
     pro_list_create(s, &response);
-    pro_list_append(s, response, result, &valResponse);
-    pro_release(s, response);
+    pro_list_append_inplace(s, &response, result);
     pro_release(s, result);
     
     pro_release(s, val);
     
-    pro_send(s, cust, valResponse);
+    pro_send(s, cust, response);
     pro_release(s, cust);
-    pro_release(s, valResponse);
+    pro_release(s, response);
 }
 
 

@@ -19,6 +19,12 @@ PRO_LIBCORE double pro_ud_get_number_value(pro_state_ref, pro_ref ud);
 
 
 #pragma mark -
+#pragma mark List
+
+PRO_LIBCORE void pro_list_append_inplace(pro_state_ref, pro_ref* msg, pro_ref val);
+
+
+#pragma mark -
 #pragma mark Behavior
 
 

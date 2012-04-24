@@ -42,6 +42,14 @@ PRO_LIBCORE double pro_ud_get_number_value(pro_state_ref s, pro_ref ud)
     return *val;
 }
 
+PRO_LIBCORE void pro_list_append_inplace(pro_state_ref s, pro_ref* msg, pro_ref val)
+{
+    pro_ref new_list = PRO_EMPTY_REF;
+    pro_list_append(s, *msg, val, &new_list);
+    pro_release(s, *msg);
+    *msg = new_list;
+}
+
 
 PRO_LIBCORE pro_matching pro_match_string(pro_state_ref s, pro_ref t, const char* str)
 {

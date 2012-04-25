@@ -1,7 +1,7 @@
 #ifndef prosopon_prosopon_libcore_h
 #define prosopon_prosopon_libcore_h
 
-#include "prosopon.h"
+#include <prosopon/prosopon.h>
 
 
 #pragma mark Objects

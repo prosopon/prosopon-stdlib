@@ -1,4 +1,4 @@
-#include "prosopon.h"
+#include <prosopon/prosopon.h>
 
 #include "pro_string.h"
 #include "pro_number.h"

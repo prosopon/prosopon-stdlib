@@ -10,7 +10,7 @@ LIBTOOL = glibtool --tag="junk"
 CC = gcc
 DOC = doxygen
 
-CFLAGS = -std=c99 -I./include -I../prosopon-core/include
+CFLAGS = -std=c99 -I./include -Iprosopon
 DOC_FLAGS = 
 
 SRC_DIR = src
@@ -18,11 +18,13 @@ TEST_DIR = test
 OUT_DIR = build
 
 LIBPROSOPON_STDLIB = libprosopon-stdlib.la
-
+PROSOPON_HEADER_DIR = $(includedir)/prosopon
 
 OBJS = pro_number pro_string prosopon_stdlib pro_stdio prosopon_macros pro_matching
 OUT_OBJS = $(addprefix $(OUT_DIR)/,$(OBJS))
 
+
+SRC_INCLUDE_DIR  = include
 
 HEADERS = prosopon_stdlib.h prosopon_macros.h
 OUT_HEADERS = $(addprefix $(SRC_INCLUDE_DIR)/,$(HEADERS))

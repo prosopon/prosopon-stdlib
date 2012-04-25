@@ -4,7 +4,7 @@ CC = gcc
 LINK = gcc
 DOC = doxygen
 
-CFLAGS = -std=c99 -I./include -I../prosopon/include -Isrc
+CFLAGS = -std=c99 -I./include -I../prosopon-core/include -Isrc
 LINK_FLAGS = -lprosopon -shared -lc
 DOC_FLAGS = 
 
@@ -12,7 +12,7 @@ SRC_DIR = src
 TEST_DIR = test
 OUT_DIR = build
 
-OBJS = pro_number.o pro_string.o prosopon_stdlib.o pro_stdio.o pro_boolean.o prosopon_macros.o pro_matching.o
+OBJS = pro_number.o pro_string.o prosopon_stdlib.o pro_stdio.o prosopon_macros.o pro_matching.o
 OUT_OBJS = $(addprefix $(OUT_DIR)/,$(OBJS))
 
 

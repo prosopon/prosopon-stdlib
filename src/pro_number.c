@@ -1,7 +1,8 @@
 #include "pro_number.h"
 
-#include "prosopon_stdlib.h"
 #include "pro_string.h"
+
+#include "prosopon_stdlib.h"
 #include "prosopon_macros.h"
 
 #include <assert.h>

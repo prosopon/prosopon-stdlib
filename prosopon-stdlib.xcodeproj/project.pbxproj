@@ -10,12 +10,10 @@
 		890024901511A2380012E749 /* pro_number.c in Sources */ = {isa = PBXBuildFile; fileRef = 890024811511A21B0012E749 /* pro_number.c */; };
 		890024911511A2390012E749 /* pro_string.c in Sources */ = {isa = PBXBuildFile; fileRef = 890024831511A21B0012E749 /* pro_string.c */; };
 		8944F7A01547852B0054A366 /* libprosopon-core.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8944F79B154785220054A366 /* libprosopon-core.dylib */; };
-		898A28201528DFA600959A40 /* pro_stdio.h in Headers */ = {isa = PBXBuildFile; fileRef = 898A281F1528DFA600959A40 /* pro_stdio.h */; };
 		898A28241528DFC000959A40 /* pro_stdio.c in Sources */ = {isa = PBXBuildFile; fileRef = 898A28231528DFC000959A40 /* pro_stdio.c */; };
 		89A2891F15448971006FE304 /* stdlib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 89A2891E1544895C006FE304 /* stdlib */; };
 		89ACBEBC151EC3ED003EA8EE /* prosopon_stdlib.c in Sources */ = {isa = PBXBuildFile; fileRef = 89ACBEBB151EC3EC003EA8EE /* prosopon_stdlib.c */; };
 		89AF58041538EE7D008D8426 /* pro_matching.c in Sources */ = {isa = PBXBuildFile; fileRef = 89AF58031538EE7D008D8426 /* pro_matching.c */; };
-		89AF58061538EE9B008D8426 /* pro_matching.h in Headers */ = {isa = PBXBuildFile; fileRef = 89AF58051538EE9B008D8426 /* pro_matching.h */; };
 		89AFC3921538B9820083E8E8 /* prosopon_stdlib.h in Headers */ = {isa = PBXBuildFile; fileRef = 89AFC3911538B9820083E8E8 /* prosopon_stdlib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		89FD7A4D1531F2D700B8F629 /* prosopon_macros.h in Headers */ = {isa = PBXBuildFile; fileRef = 89FD7A4C1531F2D700B8F629 /* prosopon_macros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		89FD7A511531F52C00B8F629 /* prosopon_macros.c in Sources */ = {isa = PBXBuildFile; fileRef = 89FD7A501531F52C00B8F629 /* prosopon_macros.c */; };
@@ -151,8 +149,6 @@
 			files = (
 				89FD7A4D1531F2D700B8F629 /* prosopon_macros.h in Headers */,
 				89AFC3921538B9820083E8E8 /* prosopon_stdlib.h in Headers */,
-				898A28201528DFA600959A40 /* pro_stdio.h in Headers */,
-				89AF58061538EE9B008D8426 /* pro_matching.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,7 +216,8 @@
 		8944F79D154785220054A366 /* test */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
-			path = test;
+			name = test;
+			path = "prosopon-tests";
 			remoteRef = 8944F79C154785220054A366 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};

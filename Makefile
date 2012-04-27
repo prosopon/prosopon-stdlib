@@ -20,7 +20,7 @@ OUT_DIR = build
 LIBPROSOPON_STDLIB = libprosopon-stdlib.la
 PROSOPON_HEADER_DIR = $(includedir)/prosopon
 
-OBJS = pro_number pro_string prosopon_stdlib pro_stdio prosopon_macros pro_matching
+OBJS = prosopon_stdlib pro_number pro_string pro_stdio prosopon_macros pro_matching
 OUT_OBJS = $(addprefix $(OUT_DIR)/,$(OBJS))
 
 

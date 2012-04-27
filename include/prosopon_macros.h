@@ -1,29 +1,33 @@
-#ifndef prosopon_prosopon_libcore_h
-#define prosopon_prosopon_libcore_h
+#ifndef prosopon_core_prosopon_macros_h
+#define prosopon_core_prosopon_macros_h
 
 #include <prosopon/prosopon.h>
 
-
-#pragma mark Objects
-
 /**
- * Creates a new string in the current environment
+ * A collection of macros to ease performing common prosopon functions.
  */
-PRO_LIBCORE pro_ref (pro_string_create) (pro_state_ref, const char* data);
-
-/**
- * Creates a new number in the current environment
- */
-PRO_LIBCORE pro_ref (pro_number_create) (pro_state_ref, double data);
-
-/**
- * @return A reference to a boolean actor.
- */
-PRO_LIBCORE pro_ref (pro_boolean_create) (pro_state_ref, int b);
 
 
 #pragma mark -
-#pragma mark Matching
+#pragma mark User Data
 
+PRO_LIBCORE pro_ref pro_number_ud_create(pro_state_ref, double val);
+
+PRO_LIBCORE pro_ref pro_string_ud_create(pro_state_ref, const char* val);
+
+PRO_LIBCORE double pro_ud_get_number_value(pro_state_ref, pro_ref ud);
+
+
+#pragma mark -
+#pragma mark Behavior
+
+
+PRO_LIBCORE pro_matching pro_match_string(pro_state_ref, pro_ref, const char*);
+
+PRO_LIBCORE int pro_match_actor_type(pro_state_ref, pro_ref, pro_actor_type);
+
+PRO_LIBCORE int pro_match_type(pro_state_ref, pro_ref, pro_type);
+
+PRO_LIBCORE void pro_list_append_inplace(pro_state_ref s, pro_ref* msg, pro_ref val);
 
 #endif

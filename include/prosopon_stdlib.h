@@ -17,9 +17,17 @@ PRO_LIBCORE pro_ref (pro_string_create) (pro_state_ref, const char* data);
 PRO_LIBCORE pro_ref (pro_number_create) (pro_state_ref, double data);
 
 /**
- * @return A reference to a boolean actor.
+ * @return A new forwarding actor.
  */
-PRO_LIBCORE pro_ref (pro_boolean_create) (pro_state_ref, int b);
+PRO_LIBCORE pro_ref (pro_forward_create) (pro_state_ref, pro_ref);
+
+
+/**
+ * @return A new future.
+ */
+PRO_LIBCORE pro_ref (pro_future_create) (pro_state_ref);
+PRO_LIBCORE void (pro_future_write) (pro_state_ref, pro_ref t, pro_ref val);
+
 
 
 

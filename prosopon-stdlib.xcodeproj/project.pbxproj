@@ -15,6 +15,8 @@
 		89ACBEBC151EC3ED003EA8EE /* prosopon_stdlib.c in Sources */ = {isa = PBXBuildFile; fileRef = 89ACBEBB151EC3EC003EA8EE /* prosopon_stdlib.c */; };
 		89AF58041538EE7D008D8426 /* pro_matching.c in Sources */ = {isa = PBXBuildFile; fileRef = 89AF58031538EE7D008D8426 /* pro_matching.c */; };
 		89AFC3921538B9820083E8E8 /* prosopon_stdlib.h in Headers */ = {isa = PBXBuildFile; fileRef = 89AFC3911538B9820083E8E8 /* prosopon_stdlib.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		89B4A980154CB19B003CD2C2 /* pro_future.c in Sources */ = {isa = PBXBuildFile; fileRef = 89B4A97F154CB19B003CD2C2 /* pro_future.c */; };
+		89E15A66154A496200BDE2B7 /* pro_forward.c in Sources */ = {isa = PBXBuildFile; fileRef = 89E15A65154A496200BDE2B7 /* pro_forward.c */; };
 		89FD7A4D1531F2D700B8F629 /* prosopon_macros.h in Headers */ = {isa = PBXBuildFile; fileRef = 89FD7A4C1531F2D700B8F629 /* prosopon_macros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		89FD7A511531F52C00B8F629 /* prosopon_macros.c in Sources */ = {isa = PBXBuildFile; fileRef = 89FD7A501531F52C00B8F629 /* prosopon_macros.c */; };
 /* End PBXBuildFile section */
@@ -70,6 +72,8 @@
 		89AF58031538EE7D008D8426 /* pro_matching.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pro_matching.c; sourceTree = "<group>"; };
 		89AF58051538EE9B008D8426 /* pro_matching.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pro_matching.h; sourceTree = "<group>"; };
 		89AFC3911538B9820083E8E8 /* prosopon_stdlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prosopon_stdlib.h; sourceTree = "<group>"; };
+		89B4A97F154CB19B003CD2C2 /* pro_future.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pro_future.c; sourceTree = "<group>"; };
+		89E15A65154A496200BDE2B7 /* pro_forward.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pro_forward.c; sourceTree = "<group>"; };
 		89FD7A4C1531F2D700B8F629 /* prosopon_macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prosopon_macros.h; sourceTree = "<group>"; };
 		89FD7A501531F52C00B8F629 /* prosopon_macros.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = prosopon_macros.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,6 +122,8 @@
 				898A28231528DFC000959A40 /* pro_stdio.c */,
 				89AF58051538EE9B008D8426 /* pro_matching.h */,
 				89AF58031538EE7D008D8426 /* pro_matching.c */,
+				89E15A65154A496200BDE2B7 /* pro_forward.c */,
+				89B4A97F154CB19B003CD2C2 /* pro_future.c */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -234,6 +240,8 @@
 				898A28241528DFC000959A40 /* pro_stdio.c in Sources */,
 				89FD7A511531F52C00B8F629 /* prosopon_macros.c in Sources */,
 				89AF58041538EE7D008D8426 /* pro_matching.c in Sources */,
+				89E15A66154A496200BDE2B7 /* pro_forward.c in Sources */,
+				89B4A980154CB19B003CD2C2 /* pro_future.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

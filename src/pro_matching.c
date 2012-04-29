@@ -26,7 +26,8 @@ const pro_actor_type_info pro_match_wildcard_type_info = {
 #pragma mark -
 #pragma mark Internal
 
-PRO_INTERNAL void pro_initialize_matching(pro_state_ref s)
+PRO_INTERNAL
+void pro_initialize_matching(pro_state_ref s)
 {
     pro_ref wildcard_actor;
     pro_actor_create(s, pro_match_wildcard_actor_type,

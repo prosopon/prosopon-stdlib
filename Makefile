@@ -5,12 +5,13 @@ exec_prefix = $(prefix)
 libdir = $(exec_prefix)/lib
 includedir = $(prefix)/include
 
+SRC_INCLUDE_DIR  = include/prosopon
 
 LIBTOOL = glibtool --tag="junk"
 CC = gcc
 DOC = doxygen
 
-CFLAGS = -std=c99 -I./include -Iprosopon
+CFLAGS = -std=c99 -I$(SRC_INCLUDE_DIR) -Iprosopon
 DOC_FLAGS = 
 
 SRC_DIR = src
@@ -24,7 +25,7 @@ OBJS = prosopon_stdlib pro_number pro_string pro_stdio prosopon_macros pro_match
 OUT_OBJS = $(addprefix $(OUT_DIR)/,$(OBJS))
 
 
-SRC_INCLUDE_DIR  = include
+
 
 HEADERS = prosopon_stdlib.h prosopon_macros.h
 OUT_HEADERS = $(addprefix $(SRC_INCLUDE_DIR)/,$(HEADERS))

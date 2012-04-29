@@ -4,6 +4,7 @@
 #include <prosopon/prosopon.h>
 
 
-PRO_INTERNAL void pro_initialize_stdio(pro_state_ref);
+PRO_INTERNAL
+void pro_initialize_stdio(pro_state_ref);
 
 #endif

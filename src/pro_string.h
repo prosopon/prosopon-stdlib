@@ -2,7 +2,6 @@
 #define prosopon_pro_string_h
 
 #include <prosopon/prosopon.h>
-#include <prosopon/prosopon_actor_type.h>
 
 
 extern pro_actor_type pro_string_actor_type;

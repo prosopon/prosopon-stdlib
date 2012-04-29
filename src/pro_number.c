@@ -2,8 +2,8 @@
 
 #include "pro_string.h"
 
-#include <prosopon/prosopon_stdlib.h>
-#include <prosopon/prosopon_macros.h>
+#include "prosopon/prosopon_stdlib.h"
+#include "prosopon/prosopon_macros.h"
 
 #include <assert.h>
 #include <string.h>

@@ -2,7 +2,6 @@
 #define prosopon_stdlib_pro_matching_h
 
 #include <prosopon/prosopon.h>
-#include <prosopon/prosopon_actor_type.h>
 
 
 extern pro_actor_type pro_match_wildcard_actor_type;

@@ -10,14 +10,14 @@
 		890024901511A2380012E749 /* pro_number.c in Sources */ = {isa = PBXBuildFile; fileRef = 890024811511A21B0012E749 /* pro_number.c */; };
 		890024911511A2390012E749 /* pro_string.c in Sources */ = {isa = PBXBuildFile; fileRef = 890024831511A21B0012E749 /* pro_string.c */; };
 		8944F7A01547852B0054A366 /* libprosopon-core.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8944F79B154785220054A366 /* libprosopon-core.dylib */; };
+		89729675154CFA0900771769 /* prosopon_macros.h in Headers */ = {isa = PBXBuildFile; fileRef = 89729673154CFA0900771769 /* prosopon_macros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		89729676154CFA0900771769 /* prosopon_stdlib.h in Headers */ = {isa = PBXBuildFile; fileRef = 89729674154CFA0900771769 /* prosopon_stdlib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		898A28241528DFC000959A40 /* pro_stdio.c in Sources */ = {isa = PBXBuildFile; fileRef = 898A28231528DFC000959A40 /* pro_stdio.c */; };
 		89A2891F15448971006FE304 /* stdlib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 89A2891E1544895C006FE304 /* stdlib */; };
 		89ACBEBC151EC3ED003EA8EE /* prosopon_stdlib.c in Sources */ = {isa = PBXBuildFile; fileRef = 89ACBEBB151EC3EC003EA8EE /* prosopon_stdlib.c */; };
 		89AF58041538EE7D008D8426 /* pro_matching.c in Sources */ = {isa = PBXBuildFile; fileRef = 89AF58031538EE7D008D8426 /* pro_matching.c */; };
-		89AFC3921538B9820083E8E8 /* prosopon_stdlib.h in Headers */ = {isa = PBXBuildFile; fileRef = 89AFC3911538B9820083E8E8 /* prosopon_stdlib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		89B4A980154CB19B003CD2C2 /* pro_future.c in Sources */ = {isa = PBXBuildFile; fileRef = 89B4A97F154CB19B003CD2C2 /* pro_future.c */; };
 		89E15A66154A496200BDE2B7 /* pro_forward.c in Sources */ = {isa = PBXBuildFile; fileRef = 89E15A65154A496200BDE2B7 /* pro_forward.c */; };
-		89FD7A4D1531F2D700B8F629 /* prosopon_macros.h in Headers */ = {isa = PBXBuildFile; fileRef = 89FD7A4C1531F2D700B8F629 /* prosopon_macros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		89FD7A511531F52C00B8F629 /* prosopon_macros.c in Sources */ = {isa = PBXBuildFile; fileRef = 89FD7A501531F52C00B8F629 /* prosopon_macros.c */; };
 /* End PBXBuildFile section */
 
@@ -65,16 +65,16 @@
 		890024841511A21B0012E749 /* pro_string.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pro_string.h; sourceTree = "<group>"; };
 		8900248C1511A2300012E749 /* libprosopon-stdlib.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = "libprosopon-stdlib.dylib"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8944F795154785210054A366 /* prosopon-core.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "prosopon-core.xcodeproj"; path = "../prosopon-core/prosopon-core.xcodeproj"; sourceTree = "<group>"; };
+		89729673154CFA0900771769 /* prosopon_macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prosopon_macros.h; sourceTree = "<group>"; };
+		89729674154CFA0900771769 /* prosopon_stdlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prosopon_stdlib.h; sourceTree = "<group>"; };
 		898A281F1528DFA600959A40 /* pro_stdio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pro_stdio.h; sourceTree = "<group>"; };
 		898A28231528DFC000959A40 /* pro_stdio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pro_stdio.c; sourceTree = "<group>"; };
 		89A2891E1544895C006FE304 /* stdlib */ = {isa = PBXFileReference; lastKnownFileType = folder; path = stdlib; sourceTree = "<group>"; };
 		89ACBEBB151EC3EC003EA8EE /* prosopon_stdlib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = prosopon_stdlib.c; sourceTree = "<group>"; };
 		89AF58031538EE7D008D8426 /* pro_matching.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pro_matching.c; sourceTree = "<group>"; };
 		89AF58051538EE9B008D8426 /* pro_matching.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pro_matching.h; sourceTree = "<group>"; };
-		89AFC3911538B9820083E8E8 /* prosopon_stdlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prosopon_stdlib.h; sourceTree = "<group>"; };
 		89B4A97F154CB19B003CD2C2 /* pro_future.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pro_future.c; sourceTree = "<group>"; };
 		89E15A65154A496200BDE2B7 /* pro_forward.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pro_forward.c; sourceTree = "<group>"; };
-		89FD7A4C1531F2D700B8F629 /* prosopon_macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prosopon_macros.h; sourceTree = "<group>"; };
 		89FD7A501531F52C00B8F629 /* prosopon_macros.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = prosopon_macros.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,11 +137,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		89729672154CFA0900771769 /* prosopon */ = {
+			isa = PBXGroup;
+			children = (
+				89729673154CFA0900771769 /* prosopon_macros.h */,
+				89729674154CFA0900771769 /* prosopon_stdlib.h */,
+			);
+			path = prosopon;
+			sourceTree = "<group>";
+		};
 		89CE9C9A151E861B00CE5511 /* include */ = {
 			isa = PBXGroup;
 			children = (
-				89AFC3911538B9820083E8E8 /* prosopon_stdlib.h */,
-				89FD7A4C1531F2D700B8F629 /* prosopon_macros.h */,
+				89729672154CFA0900771769 /* prosopon */,
 			);
 			path = include;
 			sourceTree = "<group>";
@@ -153,8 +161,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89FD7A4D1531F2D700B8F629 /* prosopon_macros.h in Headers */,
-				89AFC3921538B9820083E8E8 /* prosopon_stdlib.h in Headers */,
+				89729675154CFA0900771769 /* prosopon_macros.h in Headers */,
+				89729676154CFA0900771769 /* prosopon_stdlib.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,13 +285,14 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
-					"include/**",
-					"$(PROSOPON_BUILD_ROOT)/**",
+					"$(BUILT_PRODUCTS_DIR)/usr/local/include",
+					include,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
 				PROSOPON_BUILD_ROOT = "$(PROSOPON_ROOT_DIR)/build";
 				PROSOPON_ROOT_DIR = ..;
+				PUBLIC_HEADERS_FOLDER_PATH = /usr/local/include/prosopon;
 				SDKROOT = macosx;
 				SYMROOT = "$(PROSOPON_ROOT_DIR)/build";
 			};
@@ -304,12 +313,13 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
-					"include/**",
-					"$(PROSOPON_BUILD_ROOT)/**",
+					"$(BUILT_PRODUCTS_DIR)/usr/local/include",
+					include,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PROSOPON_BUILD_ROOT = "$(PROSOPON_ROOT_DIR)/build";
 				PROSOPON_ROOT_DIR = ..;
+				PUBLIC_HEADERS_FOLDER_PATH = /usr/local/include/prosopon;
 				SDKROOT = macosx;
 				SYMROOT = "$(PROSOPON_ROOT_DIR)/build";
 			};
@@ -319,11 +329,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				EXECUTABLE_PREFIX = lib;
-				HEADER_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "prosopon-stdlib";
 				PROSOPON_BUILD_ROOT = "";
 				PROSOPON_ROOT_DIR = ..;
-				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -331,11 +341,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				EXECUTABLE_PREFIX = lib;
-				HEADER_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "prosopon-stdlib";
 				PROSOPON_BUILD_ROOT = "";
 				PROSOPON_ROOT_DIR = ..;
-				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};

@@ -1,5 +1,7 @@
 SHELL=/bin/bash
 
+UNAME := $(shell uname)
+
 prefix = /usr/local
 exec_prefix = $(prefix)
 libdir = $(exec_prefix)/lib
@@ -7,7 +9,11 @@ includedir = $(prefix)/include
 
 SRC_INCLUDE_DIR  = include/prosopon
 
-LIBTOOL = glibtool --tag="junk"
+ifeq ($(UNAME), Darwin)
+    LIBTOOL = glibtool --tag="junk"
+else
+    LIBTOOL = libtool
+endif
 CC = gcc
 DOC = doxygen
 
